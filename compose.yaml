@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  client_api:
+    image: 'elecciones_client_api:1.0.0'
+    build: .
+    depends_on:
+      - server_api
+    ports:
+      - 8081:8081
+
+
+  server_api:
+    image: 'tupfrcutn/elecciones-2023:1.0.0'
+    hostname: 'serverapi'
+    ports:
+      - 8080
